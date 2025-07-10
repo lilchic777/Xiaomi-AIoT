@@ -2,6 +2,29 @@
 
 Code of Xiaomi AIoT Development Platform. Using U1P GD32F470ZKT6 or U2P Horizon X3M as computing unit.
 
+## Hardware Modules Involved
+
+```mermaid
+graph LR;
+	Xiaomi-AIoT-->Computing;
+	Xiaomi-AIoT-->Showing;
+	Xiaomi-AIoT-->Keyboard;
+	Xiaomi-AIoT-->Sensor;
+	Xiaomi-AIoT-->Bluetooth_Communication;
+	
+	Computing-->U1P_GD32F470ZKT6;
+	Computing-->U2P_Horizon_X3M
+	Showing-->E1_LED+Digital_Tube_Board;
+	
+	Sensor-->Resistive_Sensor;
+	Resistive_Sensor-->S6_Gyroscope_Board;
+	Sensor-->Inductive_Sensor;
+	Sensor-->Capacitive_Sensor
+	Sensor-->Thermocouple_Sensor;
+	Sensor-->Photoelectric_Sensor;
+	Sensor-->Radiation_and_Wave_Sensors;
+```
+
 ## 01：Basic Knowledge of Electronic Technology
 
 ### 01.1 Number LED
@@ -98,7 +121,7 @@ Pressing any other buttons (SW4 to SW12) causes the curtain to move back and for
 
 > [!NOTE]
 >
-> This experiment is based on the U2 Horizon X3M computing sub-board. Please refer to the user manual for environment configuration, login, and other operations.
+> This experiment is based on the U2P Horizon X3M computing sub-board. Please refer to the user manual for environment configuration, login, and other operations.
 
 After running the Python program, a window opens on the display showing the live feed from the camera.
 
