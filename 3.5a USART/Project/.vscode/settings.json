@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "e1.h": "c",
+        "gd32f4xx.h": "c",
+        "delay.h": "c",
+        "u1.h": "c",
+        "gd32f4xx_timer.h": "c",
+        "uart.h": "c",
+        "cstdint": "c"
+    }
+}
