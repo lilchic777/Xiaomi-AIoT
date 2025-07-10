@@ -7,22 +7,52 @@ Code of Xiaomi AIoT Development Platform. Using U1P GD32F470ZKT6 or U2P Horizon 
 ```mermaid
 graph LR;
 	Xiaomi-AIoT-->Computing;
-	Xiaomi-AIoT-->Showing;
-	Xiaomi-AIoT-->Keyboard;
+		Computing-->U1P_GD32F470ZKT6;
+		Computing-->U2P_Horizon_X3M
+	Xiaomi-AIoT-->Actuator;
+		Actuator-->E1_LED+Digital_Tube_Board;
+			E1_LED+Digital_Tube_Board-->Digital_Tube_Drive_Chip_HT16K33;
+			E1_LED+Digital_Tube_Board-->PWM_Drive_Chip_PCA9685;
+		Actuator-->E2_Fan_Board;
+			E2_Fan_Board-->Drive_Chip_PCA9685;
+		Actuator-->E4_Speaker_Board;
+			E4_Speaker_Board-->Power_Amplifier_Chip_NS4160;
+		Actuator-->S1_Keyboard;
+			S1_Keyboard-->Drive_Chip_HT16K33;
+		Actuator-->E3_Curtain_Board;
+			E3_Curtain_Board-->Drive_Chip_HR8833MTE;
+			E3_Curtain_Board-->MCU_GD32F330F8P6;
 	Xiaomi-AIoT-->Sensor;
-	Xiaomi-AIoT-->Bluetooth_Communication;
-	
-	Computing-->U1P_GD32F470ZKT6;
-	Computing-->U2P_Horizon_X3M
-	Showing-->E1_LED+Digital_Tube_Board;
-	
-	Sensor-->Resistive_Sensor;
-	Resistive_Sensor-->S6_Gyroscope_Board;
-	Sensor-->Inductive_Sensor;
-	Sensor-->Capacitive_Sensor
-	Sensor-->Thermocouple_Sensor;
-	Sensor-->Photoelectric_Sensor;
-	Sensor-->Radiation_and_Wave_Sensors;
+		Sensor-->Radiation_and_Wave_Sensors;
+			Radiation_and_Wave_Sensors-->S6_Ultrasonic_Board;
+				S6_Ultrasonic_Board-->MCU_GD32F330F8P6;
+				S6_Ultrasonic_Board-->Ultrasonic_Module_DYP-A06;
+			Radiation_and_Wave_Sensors-->S7_Human_Body_Infrared_Board;
+				S7_Human_Body_Infrared_Board-->Driver_Chip_PCA9557;
+				S7_Human_Body_Infrared_Board-->Pyroelectric_Sensor_BS412;	
+		Sensor-->Resistive_Sensor;
+			Resistive_Sensor-->S6_Gyroscope_Board;
+				S6_Gyroscope_Board-->Gyroscope_ICM-20608;		
+		Sensor-->Inductive_Sensor;
+			Inductive_Sensor-->S5_NFC_Board;
+				S5_NFC_Board-->NFC_MS523;
+		Sensor-->Capacitive_Sensor;
+			Capacitive_Sensor-->S3_Microphone_Board;
+				S3_Microphone_Board-->Digital_Microphone_MP34DT05-A;
+				S3_Microphone_Board-->MEMS_Silicon_Microphone_GMI4015P-2C-42db;
+		Sensor-->Thermocouple_Sensor;
+			Thermocouple_Sensor-->S8_Temperature_and_Humidity_Board;
+			S8_Temperature_and_Humidity_Board-->SHT35-DIS-B;
+		Sensor-->Photoelectric_Sensor;
+			Photoelectric_Sensor-->S4_Camera;
+			S4_Camera-->Camera_Module_QQSJ-8942-32*32;
+
+	Xiaomi-AIoT-->Communication;
+		Communication-->C3_General_Wi-Fi+BLE_Board;
+			C3_General_Wi-Fi+BLE_Board-->Wi-Fi_Module_ESP-WROOM-32-N4;
+	Xiaomi-AIoT-->Expansion;
+		Expansion-->B3_Multi-Protocol_Interface_Expansion_Sub-board;
+
 ```
 
 ## 01：Basic Knowledge of Electronic Technology
